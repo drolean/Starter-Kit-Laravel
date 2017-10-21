@@ -68,7 +68,7 @@ class Activity extends Model
     }
 
     /**
-     * Returns a Formated activity
+     * Returns a Formated activity.
      *
      * @return string
      */
@@ -76,25 +76,25 @@ class Activity extends Model
     {
         switch ($this->acao) {
             case 'created':
-                echo "Criou novo ";
+                echo 'Criou novo ';
                 break;
             case 'updated':
-                echo "Atualizou ";
+                echo 'Atualizou ';
                 break;
             case 'deleted':
-                echo "Apagou ";
+                echo 'Apagou ';
                 break;
         }
 
         switch ($this->content_type) {
             case 'App\User':
-                echo "Usuário";
+                echo 'Usuário';
                 break;
             case 'App\Models\Profile':
-                echo "Perfil";
+                echo 'Perfil';
                 break;
         }
 
         echo " (id: $this->content_id)";
-    }    
+    }
 }
