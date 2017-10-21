@@ -1,0 +1,231 @@
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin flex-direction($value: row) {
+    @if $value == row-reverse {
+        -webkit-box-direction: reverse;
+           -webkit-box-orient: horizontal;
+    } @else if $value == column {
+        -webkit-box-direction: normal;
+           -webkit-box-orient: vertical;
+    } @else if $value == column-reverse {
+        -webkit-box-direction: reverse;
+           -webkit-box-orient: vertical;
+    } @else {
+        -webkit-box-direction: normal;
+           -webkit-box-orient: horizontal;
+    }
+    -webkit-flex-direction: $value;
+       -moz-flex-direction: $value;
+        -ms-flex-direction: $value;
+            flex-direction: $value;
+}
+
+@mixin linear-gradient($val...) {
+    background-image: linear-gradient($val);
+    background-image: -o-linear-gradient($val);
+    background-image: -moz-linear-gradient($val);
+    background-image: -webkit-linear-gradient($val);
+    background-image: -ms-linear-gradient($val);
+}
+
+@mixin flex($val) {
+  -webkit-box-flex: $val;
+     -moz-box-flex: $val;
+      -webkit-flex: $val;
+          -ms-flex: $val;
+              flex: $val;
+}
+
+@mixin x-display-flex {
+  display: -webkit-box;  // Chrome 20-, iOS 6-, Safari 3.1  -6
+  display: -moz-box;     // FF 19-
+  display: -webkit-flex; // Chrome 21 - 28
+  display: -ms-flexbox;  // IE 10
+  display: flex;         // FF 20+, Chrome 29+, Opera 12.1, 17+
+}
+
+// Font-size to be converted from `px` to `rem`
+@mixin font-size($size, $base: 16) {
+  font-size: $size * 1px; // fallback for old browsers
+  font-size: ($size / $base) * 1rem;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility
+@mixin backface-visibility ($val) {
+        backface-visibility: $val;
+-webkit-backface-visibility: $val;
+   -moz-backface-visibility: $val;
+    -ms-backface-visibility: $val;
+     -o-backface-visibility: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+@mixin border-radius($val) {
+        border-radius: $val; /* W3c */
+-webkit-border-radius: $val; /* Safari & Chrome */
+   -moz-border-radius: $val; /* Firefox */
+    -ms-border-radius: $val; /* Internet Explorer */
+     -o-border-radius: $val; /* Opera */
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: #{$inset} $top $left $blur $color;
+    -moz-box-shadow: #{$inset} $top $left $blur $color;
+    box-shadow: #{$inset} $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+@mixin transform($val...) {
+        transform: $val;
+-webkit-transform: $val;
+   -moz-transform: $val;
+    -ms-transform: $val;
+     -o-transform: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style
+@mixin transform-style($val) {
+        transform-style: $val;
+-webkit-transform-style: $val;
+   -moz-transform-style: $val;
+    -ms-transform-style: $val;
+     -o-transform-style: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin
+@mixin transform-origin ($val) {
+        transform-origin: $val;
+-webkit-transform-origin: $val;
+    moz-transform-origin: $val;
+    -ms-transform-origin: $val;
+     -o-transform-origin: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+@mixin transition($val...) {
+        transition: $val;
+-webkit-transition: $val;
+   -moz-transition: $val;
+    -ms-transition: $val;
+     -o-transition: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration
+@mixin transition-duration($val) {
+        transition-duration: $val;
+-webkit-transition-duration: $val;
+   -moz-transition-duration: $val;
+    -ms-transition-duration: $val;
+     -o-transition-duration: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property
+@mixin transition-property($val...) {
+        transition-property: $val;
+-webkit-transition-property: $val;
+   -moz-transition-property: $val;
+    -ms-transition-property: $val;
+     -o-transition-property: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function
+@mixin transition-timing-function($val) {
+        transition-timing-function: $val;
+-webkit-transition-timing-function: $val;
+   -moz-transition-timing-function: $val;
+    -ms-transition-timing-function: $val;
+     -o-transition-timing-function: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay
+@mixin transition-delay($val) {
+        transition-delay: $val;
+-webkit-transition-delay: $val;
+   -moz-transition-delay: $val;
+    -ms-transition-delay: $val;
+     -o-transition-delay: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow
+@mixin text-shadow($top: 3px, $left: 3px, $blur: 3px , $colour: #333) {
+        text-shadow: $top $left $blur $colour;
+-webkit-text-shadow: $top $left $blur $colour;
+   -moz-text-shadow: $top $left $blur $colour;
+    -ms-text-shadow: $top $left $blur $colour;
+     -o-text-shadow: $top $left $blur $colour;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/perspective
+@mixin perspectiveNew($val: none) {
+  @each $prefix in -moz, -ms, -o, -webkit {
+    #{$prefix}-perspective: $val;
+  }
+  perspective: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin
+@mixin perspective-origin($val) {
+        perspective-origin: $val;
+-webkit-perspective-origin: $val;
+   -moz-perspective-origin: $val;
+    -ms-perspective-origin: $val;
+     -o-perspective-origin: $val;
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/opacity
+@mixin opacity($val) {
+    -ms-filter: "alpha(opacity=#{round( $val * 100 )})";
+       opacity: $val; /* Standards Compliant Browsers */
+-khtml-opacity: $val; /* Safari 1.x */
+  -moz-opacity: $val; /* Netscape */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{round( $val * 100 )})"; /* IE 8 */
+        filter: alpha(opacity=#{round( $val * 100 )}); /* IE 5-7 */
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/CSS/filter (Blur)
+@mixin filter-blur($val : 10px, $ie-value : 10) {
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=#{$ie-value}, MakeShadow=false, ShadowOpacity=#{$val});  /* IE6~IE9 */
+-webkit-filter: blur($val); /* Chrome, Opera, iOS, Safari */
+   -moz-filter: blur($val); /* Firefox(Old) */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=#{$ie-value}, MakeShadow=false, ShadowOpacity=#{$val})";
+        filter: blur($val);
+}
+
+// This mixin is used for better font-rendering on OS X,
+// because due to its sub-pixel antialiasing algorithm
+// OS X tends to render light text on dark backgrounds too bold.
+@mixin font-smoothing($val: antialiased) {
+  @if $val == antialiased {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}

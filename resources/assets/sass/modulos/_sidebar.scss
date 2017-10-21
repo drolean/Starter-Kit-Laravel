@@ -1,0 +1,272 @@
+.off-canvas-overlay {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    visibility: hidden;
+    background-color: rgba(0,0,0,.5);
+}
+
+.offscreen .sidebar-panel {
+    @include transform(translateZ(0));
+}
+
+.header .brand, .toggle-offscreen {
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+.brand .toggle-offscreen {
+    padding: 16px 0px;
+    float: left;
+    margin-right: 1rem;
+    i {
+        color: hsla(0, 0%, 100%, 0.7);
+        line-height: 24px;
+        vertical-align: middle;
+        font-size: 24px;
+    }
+}
+
+.offscreen .sidebar-panel:not(:hover) {
+    width: 0rem;
+}
+
+.sidebar-panel {
+    position: static;
+    z-index: 60;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    @include x-display-flex;
+    @include transform(translateZ(0));
+    @include transition(width 0.3s cubic-bezier(0.7, 0, 0.3, 1));
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    left: 0;
+    width: 16rem;
+    background-color: #fff;
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+
+    // Logo
+    .brand {
+        z-index: 1;
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        min-height: 56px;
+        text-align: center;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+        > a {
+            color: $link-texto;
+            @include font-size(20);
+            font-weight: 700;
+            text-transform: uppercase;
+            &:hover {
+                text-decoration: none;
+            }
+            > i {
+                color: rgba(0,0,0,.7);
+            }
+        }
+        .brand-logo {
+            display: inline-block;
+            padding-top: 4px;
+            padding-bottom: 0;
+            line-height: 13px;
+            img {
+                max-width: 250px;
+                max-height: 48px;
+            }
+        }
+    }
+
+    // Profile
+    .nav-profile{
+        position:relative;
+        display:block;
+        margin:5px 0;
+        color: $link-texto;
+        a.dropdown-toggle{
+            position:relative;
+            display:inline-block;
+            width:100%;
+            padding:.5125rem 1.5rem;
+            color: $link-texto;
+            > * {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            &:after{
+                font-family:FontAwesome;
+                position:absolute;
+                top:50%;
+                width:auto;
+                margin-top:-12px;
+                margin-right:0;
+                content:"\f0d7";
+                border:0;
+                right:1.5rem;
+                direction:ltr;
+            }
+            .user-image{
+                padding-right:.5rem;
+                display: inline-block;
+                .avatar{
+                    width:2.8rem
+                }
+            }
+            .user-info {
+                display: inline-block;
+                float: none!important;
+                overflow: hidden;
+                white-space: nowrap;
+                small {
+                    display: block;
+                }
+            }
+        }
+        // Menu do usuario
+        .dropdown-menu {
+            left:50%;
+            width:90%;
+            @include transform(translate(-50%));
+            background:#f7f0f0;
+            border-color:rgba(0,0,0,.1);
+            box-shadow:0 2px 5px 0 rgba(0,0,0,.07),0 2px 10px 0 rgba(0,0,0,.08);
+            border-radius:2px;
+            @include transition(opacity .2s ease-in-out,visibility .2s ease-in-out);
+            .dropdown-item{
+                @include font-size(13);
+                padding:inherit 1rem;
+                color:$link-texto;
+                &:focus {
+                    background-color:hsla(0,0%,8%,.1);
+                }
+                &:hover {
+                    background-color:hsla(0,0%,8%,.1);
+                }
+                &:active {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    // Nav Menu
+    &>nav{
+        position:relative;
+        display:block;
+        overflow-x:hidden;
+        overflow-y:auto;
+        overflow-y:overlay;
+        box-sizing:border-box;
+        -webkit-box-flex:1;
+        -moz-flex:1;
+        -ms-flex:1;
+        flex:1;
+        -webkit-overflow-scrolling:touch;
+        /*margin-right:-35px;*/
+        color: $link-texto;
+        .nav-title{
+            @include font-size(11);
+            font-weight: 500;
+            margin: 0;
+            padding: .5125rem 1.5rem;
+            letter-spacing:.01rem;
+            color: #90a4ae;
+        }
+        ul{
+            margin-bottom:5px;
+            padding:0;
+            list-style:none;
+            &>li {
+                position: relative;
+                display: block;
+                padding: 6px 0;
+                @include font-size(15);
+                white-space: nowrap;
+                &>a{
+                    overflow:hidden;
+                    white-space:nowrap;
+                    -webkit-transition:background .2s,color .2s;
+                    transition:background .2s,color .2s;
+                    position: relative;
+                    display: block;
+                    clear: both;
+                    padding: .5125rem 1.5rem;
+                    color: $link-texto;
+                    &>* {
+                        vertical-align: middle;
+                    }
+                    &>span {
+                        display: inline-block;
+                    }
+                    &>i {
+                        line-height: 1;
+                        margin-right: .5em;
+                        @include font-size(24);
+                    }
+                }
+                // Sub Menu Aberto
+                &.open {
+                    background-color: rgba(0,0,0,.02);
+                    font-weight: 500;
+                    &:before {
+                        position: absolute;
+                        z-index: 99;
+                        top: 0;
+                        width: 3px;
+                        height: 100%;
+                        content: '';
+                        background: #009efb;
+                        left: 0;
+                    }
+                    &>ul {
+                        max-height: 1000px!important;
+                    }
+                    &>a {
+                        color: #009efb;
+                        .menu-caret {
+                            -webkit-transform: rotate(-180deg);
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+            }
+            &.nav>li ul {
+                overflow: hidden;
+                max-height: 0;
+                -webkit-transition: .5s cubic-bezier(.35,0,.25,1);
+                transition: .5s cubic-bezier(.35,0,.25,1);
+                -webkit-transition-property: max-height;
+                transition-property: max-height;
+            }
+            &.sub-menu{
+                position:relative;
+                z-index:1;
+                & li a {
+                    padding: .5125rem 1.5rem .5125rem 4.01rem;
+                }
+            }
+        }
+        .menu-caret{
+            display:inline-block;
+            -webkit-transition:-webkit-transform .2s cubic-bezier(.7,0,.3,1);
+            transition:-webkit-transform .2s cubic-bezier(.7,0,.3,1);
+            transition:transform .2s cubic-bezier(.7,0,.3,1);
+            transition:transform .2s cubic-bezier(.7,0,.3,1),-webkit-transform .2s cubic-bezier(.7,0,.3,1);
+            float:right;
+            margin-left:.3125rem;
+        }
+
+    }
+}

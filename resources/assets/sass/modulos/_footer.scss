@@ -1,0 +1,24 @@
+.content-footer {
+    padding: 0 1.5rem;
+    .footer-right {
+        float: right;
+        margin-right: 0;
+    }
+    nav {
+        margin-right: 1rem;
+        ul {
+            li  {
+                display: inline-block;
+                vertical-align: -webkit-baseline-middle;
+                a {
+                    display: block;
+                    padding: .906rem .625rem;
+                    color: $link-texto;
+                    @include font-size(11);
+                    line-height: 17px;
+                    color: #777;                    
+                }
+            }
+        }
+    }
+}

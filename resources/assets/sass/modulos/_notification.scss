@@ -1,0 +1,43 @@
+.modal.docked {
+    .modal-dialog {
+        position: fixed;
+        top: 0;
+        margin: 0;
+        height: 100vh;
+        width: 350px;
+    }
+    &.docked-left .modal-dialog {
+        left: 0;
+    }
+    &.docked-right .modal-dialog {
+        right: 0;
+    }
+    .modal-content {
+        border-radius: 0;
+        height: 100vh;
+        border: none;
+        overflow-y: scroll;
+        min-height: 100vh;
+    }
+    .modal-footer {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    }
+    .modal-body {
+        height: 100vh;
+        min-height: 100vh;
+    }
+    .modal-header {
+        background: #fff;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+        margin-bottom: 0;
+        height: 70px;
+        width: 100%;
+        position: fixed;
+        z-index: 100;
+    }
+    .helper-container {
+        padding-top: 70px;
+    }
+}

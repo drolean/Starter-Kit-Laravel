@@ -1,0 +1,29 @@
+.session-panel {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.session {
+    min-height: 100vh;
+    @include x-display-flex;
+    @include flex-direction(column);
+}
+
+.session-content {
+    @include x-display-flex;
+    //@include flex(1);
+    @include flex-direction(column);
+    padding: 40px 0;
+    justify-content: center;
+}
+
+.session-wrapper {
+    min-height: 100%;
+    margin: 0 auto-3rem;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+        height: 3rem;
+    }
+}

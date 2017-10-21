@@ -1,0 +1,38 @@
+.app {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    background: $background-app;
+    @include x-display-flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    @include flex-direction(row);
+    &:not(.layout-static) {
+        //max-height: 100%;
+        //height: 100%;
+    }
+    &.layout-static {
+        max-height: initial !important;
+        height: initial !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding: 5% 0;
+        position: fixed;
+        .card-block {
+            @include flex(initial);
+        }
+
+        @for $i from 1 through 8 {
+            &.bg-#{$i} {
+                background-image: url('/static/img/bg/login-bg-#{$i}.jpg');
+            }
+        }
+    }
+    &.error-page .card {
+        display: block;
+        width: 100%;
+        margin: 100px auto;
+    }
+}

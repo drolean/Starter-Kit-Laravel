@@ -1,0 +1,49 @@
+.box {
+    overflow: hidden;
+    padding: 10px;
+    @include border-radius(3);
+    .box-title {
+        h1 > a, h2 > a, h3 > a, h4 > a, h5 > a, h6 > a {
+            color: #fff;
+            margin: 0;
+        }
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+        margin: 0;
+    }
+    .box-title {
+        padding: 10px 0 20px 0;
+        position: relative;
+        border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+        i.fa {
+            position: absolute;
+            top: 0;
+            right: 0;
+            @include font-size(70);
+            color: rgba(0, 0, 0, 0.1);
+        }
+    }
+    .box-body {
+        .sparkline {
+            display: block;
+            margin-top: 10px;
+        }
+        border-top: rgba(255, 255, 255, 0.1) 1px solid;
+    }
+    &.warning {
+        background-color: #f4b04f;
+    }
+    &.info {
+        background-color: #1D89CF;
+    }
+    &.danger {
+        background-color: #E66454;
+    }
+    &.default {
+        background-color: #999999;
+    }
+    &.success {
+        background-color: #5CB85C;
+    }
+}

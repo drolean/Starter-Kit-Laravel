@@ -1,0 +1,40 @@
+.search-bar {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  z-index: 9999999;
+  width: 100%;
+  @include transition(.25s);
+  &.open {
+    top: 0;
+  }
+  .search-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    .fa {
+      color: #999;
+    }
+  }
+  .close-search {
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 18px;
+    .fa {
+      color: #999;
+      @include opacity(1);
+      @include transition(0.5s);
+      &:hover {
+        @include opacity(0.5);
+      }
+    }
+  }
+  input[type="text"] {
+    width: 100%;
+    @include font-size(19);
+    padding: 15px 53px;
+    border: none;
+    outline: 0;
+  }
+}

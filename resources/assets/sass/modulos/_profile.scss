@@ -1,0 +1,64 @@
+.profile-bio {
+    @include border-radius(5px);
+    .background {
+        display: block;
+        width: 100%;
+        height: 60px;
+        border: 2px 2px 0 0;
+    }
+    .avatar {
+        display: flex;
+        max-width: 100%;
+        margin: -30px 5px 0 10px;
+        padding: 1px;
+        vertical-align: bottom;
+        border-radius: 2px;
+        img {
+            box-sizing: border-box;
+            width: 72px;
+            height: 72px;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 4px;
+            float: left;
+            background-color: #fff;
+        }
+    }
+    .user-details {
+        padding: 34px 8px 0;
+        float: left;
+        .user-name {
+            @include font-size(16);
+            font-weight: 500;
+            line-height: 1rem;
+        }
+    }
+    .user-stats {
+        > ul {
+            display: table;
+            box-sizing: border-box;
+            min-width: 100%;
+            margin: 0;
+            padding: 0;
+            table-layout: auto;
+            list-style: outside none none;
+            > li {
+                display: table-cell;
+                padding: 0;
+                vertical-align: top;
+                text-align: center;
+                > a:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        .small {
+            @include font-size(10);
+            font-weight: 600;
+            letter-spacing: .01rem;
+        }
+    }
+}
+
+.profile-reccomendations .user-meta{margin-bottom:0;padding:0;list-style:none}
+.profile-reccomendations .user-meta li{padding:5px 0}
