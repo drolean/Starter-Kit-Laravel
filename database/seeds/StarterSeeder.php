@@ -22,8 +22,8 @@ class StarterSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name'       => 'Leandro Henrique Ross',
-            'email'      => 'leandroross@gmail.com',
+            'name'       => 'Fulano Beltrano',
+            'email'      => 'usuario@email.com',
             'password'   => bcrypt('secret'),
             'activation' => 1,
             'is_admin'   => 1,
