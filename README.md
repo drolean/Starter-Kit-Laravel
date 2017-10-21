@@ -2,6 +2,11 @@
 
 by Leandro Ross
 
+## Iniciando
+
+- php artisan migrate --seed
+apos instalado seria registrado o usuario "usuario@email.com" senha "secret", apos sera necessario gerar as permissões no Painel "Gestão de Usuários -> Permissões(Rotas) -> Gerar Lista"
+
 ## Laravel Mix Install
 
 - npm install --no-bin-links
@@ -30,23 +35,3 @@ $ sudo apt-get install -y xvfb
 ```$ Xvfb :0 -screen 0 1280x960x24 &```
 
 Add Hosts /etc/hosts
-
-
-    /*! Envio de SMS *
-    Plivo::sendSMS([
-        'src' => '1111111111',
-        'dst' => '+554391062502',
-        'text' => 'Testde de Mensagem legla'                   
-    ]);
-   
-    /*! Lista de Aplicações */
-    //Plivo::listApplications();
-
-    /*! Detalhes da conta como credito */
-    //Plivo::accountDetails();
-
-    /*! Historico de Mensagems */
-    //Plivo::allMessages();
-
-    /*! Definição de preço */
-    //Plivo::pricing(['country_iso' => 'BR']);
