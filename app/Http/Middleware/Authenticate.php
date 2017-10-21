@@ -68,7 +68,6 @@ class Authenticate
         ($request->route()->getName() !== 'admin.profile.password')) {
             return redirect()->route('admin.profile.password')->with('info', 'Altere sua senha!');
         }
-        
 
         /*! Coloca status de online ao usuario */
         Cache::put('user-is-online-'.$this->auth->User()->id, true, Carbon::now()->addMinutes(2));
@@ -91,7 +90,7 @@ class Authenticate
         }
 
         /*! Libera admin somente para quem tem regra */
-        if($this->auth->User()->roles->count() === 0) {
+        if ($this->auth->User()->roles->count() === 0) {
             $this->auth->logout();
 
             return redirect()->guest('/auth/login')->with('error', 'Acesso não permitido.');

@@ -79,10 +79,10 @@ class DashboardNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('['.config('app.name').'] Nova notificação (' . Carbon::now() . ')')
+                    ->subject('['.config('app.name').'] Nova notificação ('.Carbon::now().')')
                     ->greeting($this->dados['title'])
                     ->line($this->dados['body'])
                     ->action('Visualizar', (isset($this->dados['action_url'])) ? $this->dados['action_url'] : null)
                     ->line('Este E-mail Foi Gerado Automaticamente');
-    }    
+    }
 }

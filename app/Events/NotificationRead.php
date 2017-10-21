@@ -29,7 +29,7 @@ class NotificationRead implements ShouldBroadcast
      */
     public function __construct($userId, $notificationId)
     {
-        $this->userId         = $userId;
+        $this->userId = $userId;
         $this->notificationId = $notificationId;
 
         $this->dontBroadcastToCurrentUser();

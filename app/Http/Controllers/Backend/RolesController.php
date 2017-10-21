@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use App\Models\Permission;
 use App\Models\Role;
+use App\Models\Permission;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
 
 class RolesController extends Controller
@@ -42,8 +42,8 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        $Role              = new Role;
-        $Role->name        = $request->input('name');
+        $Role = new Role;
+        $Role->name = $request->input('name');
         $Role->description = $request->input('description');
         $Role->save();
 
@@ -62,7 +62,7 @@ class RolesController extends Controller
      */
     public function show($id)
     {
-        $Role        = Role::with('permissions')->where('id', $id)->first();
+        $Role = Role::with('permissions')->where('id', $id)->first();
         $Permissions = Permission::all();
 
         return view('backend.roles.edit', compact('Role', 'Permissions'));
@@ -76,7 +76,7 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        $Role        = Role::with('permissions')->where('id', $id)->first();
+        $Role = Role::with('permissions')->where('id', $id)->first();
         $Permissions = Permission::all();
 
         return view('backend.roles.edit', compact('Role', 'Permissions'));

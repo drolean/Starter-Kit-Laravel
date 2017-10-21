@@ -13,7 +13,6 @@ return [
     |
     */
 
-
     'accepted'             => ':attribute precisa ser aceito.',
     'active_url'           => ':attribute infelizmente não é uma URL válida.',
     'after'                => ':attribute precisa ser uma data depois de :date. Por favor, você pode verificar isso?',

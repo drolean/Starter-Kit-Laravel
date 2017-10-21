@@ -28,12 +28,12 @@ class FrontendController extends Controller
             'background_color' => '#0178BC',
             'theme_color'   => '#0178BC',
             'icons'         => [
-                [ 'src' => 'launcher-icon-1x.png', 'type' => 'image/png', 'sizes' => '48x48'   ],
-                [ 'src' => 'launcher-icon-2x.png', 'type' => 'image/png', 'sizes' => '96x96'   ],
-                [ 'src' => 'launcher-icon-3x.png', 'type' => 'image/png', 'sizes' => '144x144' ],
-                [ 'src' => 'launcher-icon-4x.png', 'type' => 'image/png', 'sizes' => '192x192' ],
-                [ 'src' => 'launcher-icon-5x.png', 'type' => 'image/png', 'sizes' => '512x512' ]
-            ]
+                ['src' => 'launcher-icon-1x.png', 'type' => 'image/png', 'sizes' => '48x48'],
+                ['src' => 'launcher-icon-2x.png', 'type' => 'image/png', 'sizes' => '96x96'],
+                ['src' => 'launcher-icon-3x.png', 'type' => 'image/png', 'sizes' => '144x144'],
+                ['src' => 'launcher-icon-4x.png', 'type' => 'image/png', 'sizes' => '192x192'],
+                ['src' => 'launcher-icon-5x.png', 'type' => 'image/png', 'sizes' => '512x512'],
+            ],
         ];
     }
 
