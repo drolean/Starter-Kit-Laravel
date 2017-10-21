@@ -15,6 +15,7 @@ mix.autoload({})
 
 // Base Directories
 var bower = 'bower_components/';
+var npm   = 'node_modules/';
 
 // Copiando Fontes
 mix.copy('bower_components/font-awesome/fonts', 'public/static/fonts/font-awesome/');
@@ -26,7 +27,7 @@ mix.sass('resources/assets/sass/app.scss', 'public/static/css/app.css').version(
 mix.scripts([
     bower + 'jquery/dist/jquery.min.js',
     bower + 'popper.js/dist/umd/popper.js',
-    bower + 'bootstrap/dist/js/bootstrap.min.js',
+    npm   + 'bootstrap/dist/js/bootstrap.bundle.js',
     bower + 'jquery-ujs/src/rails.js',
     bower + 'jquery-mask-plugin/src/jquery.mask.js',
     bower + 'alertifyjs/src/js/alertify.js',
