@@ -2,10 +2,31 @@
 
 by Leandro Ross
 
-## Iniciando
+## Included
 
-- php artisan migrate --seed
-apos instalado seria registrado o usuario "usuario@email.com" senha "secret", apos sera necessario gerar as permissões no Painel "Gestão de Usuários -> Permissões(Rotas) -> Gerar Lista"
+- Bootstrap V4 Theme
+- Vue Components
+- Notification Pusher
+- Chat
+- Tickets
+- ACL Control
+- Alert
+- Log Activity
+- Panel + Website or Only Panel
+- SSL Support
+- MultiSAS 
+- Social Login
+- 2FA Integration
+- Laravel 5.5
+
+## Starting
+
+  * copy .env.example .env
+  * php artisan key:generate
+  * php artisan migrate --seed
+  * apos instalado sera criado o usuário "***usuario@email.com***" senha "***secret***"
+  * Painel **Gestão de Usuários** -> **Permissões(Rotas)** -> **Gerar Lista**
+
 
 ## Laravel Mix Install
 
