@@ -45,12 +45,12 @@ Dashboard
             </div>
         </div>
 
-        <div class="row"> 
+        <div class="row">
             <div class="col-lg-4 col-md-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-row">
-                            <div class=""><img src="https://a.test.bi/images/avatar/6d28f2fb87aa5e1e4b6f1b52fbd0fa5030f1af1d.jpg" alt="user" class="rounded-circle"></div>
+                            <div class=""><img src="{{ auth()->user()->gravatar }}" alt="user" class="rounded-circle"></div>
                             <div class="pl-20">
                                 <h3 class="font-medium">Daniel Kristeen</h3>
                                 <h6>UIUX Designer</h6>
@@ -143,7 +143,7 @@ Dashboard
                         </table>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
 
         <div class="row">
@@ -170,7 +170,7 @@ Dashboard
                                         <td>01/06/2017 18h32</td>
                                     </tr>
                                     <tr class="active">
-                                        <td><span class="round"><img src="https://a.test.bi/images/avatar/6d28f2fb87aa5e1e4b6f1b52fbd0fa5030f1af1d.jpg" alt="user" width="50"></span></td>
+                                        <td><span class="round">S</span></td>
                                         <td><h6>Andrew</h6><small class="text-muted">Project Manager</small></td>
                                         <td>Atualizou perfil</td>
                                         <td>Alterou seu sobrenome de "alfaiate" para "engraxate"</td>

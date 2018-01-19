@@ -11,12 +11,6 @@ import NotificationsDropdown from './components/NotificationsDropdown.vue'
 import ChatMessages from './components/ChatMessages.vue'
 import ChatForm from './components/ChatForm.vue'
 
-// Diretivas
-import * as directives from './directives'
-Object.keys(directives).forEach((name) => {
-  Vue.directive(name, directives[name]);
-});
-
 // Setando locale
 Vue.use(VueTimeago, {
   locale: 'pt-BR',

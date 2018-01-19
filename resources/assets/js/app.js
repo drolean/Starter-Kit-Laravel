@@ -1,3 +1,29 @@
+// JQuery
+window.$ = window.jQuery = require('jquery');
+
+// JQuery UJS
+const jQueryUJS =  require('jquery-ujs');
+
+// Font-Awesome
+const fontawesome = require('@fortawesome/fontawesome')
+const solid = require('@fortawesome/fontawesome-free-solid')
+import { faFacebook } from '@fortawesome/fontawesome-free-brands/shakable';
+fontawesome.library.add(faFacebook)
+
+// Bootstrap
+require('bootstrap');
+
+// Flat Pickr
+const Flatpickr = require("flatpickr");
+const FlatpickrPTBR = require("flatpickr/dist/l10n/pt.js").default.pt;
+flatpickr('.v-date', { 
+    dateFormat: 'd/m/Y', 
+    allowInput: true,
+    'locale': FlatpickrPTBR
+});
+
+// Alertify.JS
+const alertify = require("alertify.js");
 (function () {
   window.alert = function (str) {
     alertify.alert(str);
@@ -15,9 +41,6 @@ $(document).ready(function () {
       $searchBar.removeClass("open"), $searchBar.find('input[type="text"]').val("")
     }
   })
-
-  Flatpickr.localize(Flatpickr.l10ns.pt);
-  flatpickr('.v-date', { dateFormat: 'd/m/Y', allowInput: true });
 
   $(".alert").alert();
 
@@ -122,33 +145,6 @@ $(document).ready(function () {
       }
     },
   });
-
-  // Mask Telefone
-  var SPMaskBehavior = function (val) {
-      return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
-    },
-    optionsTelefone = {
-      onKeyPress: function (val, e, field, options) {
-        field.mask(SPMaskBehavior.apply({}, arguments), options);
-      }
-    },
-    optionsCpfCnpj = {
-      onKeyPress: function (cpf, ev, el, op) {
-        var masks = ['000.000.000-000', '00.000.000/0000-00'],
-          mask = (cpf.length > 14) ? masks[1] : masks[0];
-        el.mask(mask, op);
-      }
-    };
-
-  $('.ipt_telefone').mask(SPMaskBehavior, optionsTelefone);
-  $('.ipt_data').mask('00/00/0000');
-  $('.ipt_cep').mask('00000-000');
-  $('.ipt_placa').mask('SSS-0000');
-  $('.ipt_ddmm').mask('00/0000');
-  $('.ipt_ano').mask('0000');
-  $('.ipt_uf').mask('SS');
-  $('.ipt_cnpj').mask('00.000.000/0000-00', optionsCpfCnpj);
-  $('.ipt_money').mask('#.##0,00', { reverse: true });
 
   $('#cep').blur(function () {
     if ($(this).val().length == 9) {

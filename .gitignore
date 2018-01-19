@@ -1,9 +1,10 @@
 /node_modules
 /public/storage
+/storage/*.key
 /vendor
 /.idea
 Homestead.json
 Homestead.yaml
+npm-debug.log
+yarn-error.log
 .env
-Homestead.yaml
-/bower_components

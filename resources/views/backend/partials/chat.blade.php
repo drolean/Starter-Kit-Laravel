@@ -1,7 +1,7 @@
         <div class="chat-conversation fade">
             <div class="text-center bold inner-header p-3 mb-3">
                 <span class="h5"> CHAT </span>
-                <span class="pull-right close-chat">
+                <span class="float-right close-chat">
                     <i aria-hidden="true" class="fa fa-times-circle fa-lg"></i>
                 </span>
             </div>

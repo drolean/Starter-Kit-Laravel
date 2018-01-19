@@ -1,15 +1,13 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "drolean/Starter-Kit-Laravel",
+    "description": "Laravel Starter Kit Admin Panel.",
+    "keywords": ["php", "framework", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.6.4",
+        "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
-        "garygreen/pretty-routes": "^0.0",
         "intervention/image": "^2.3",
-        "lakshmaji/plivo": "^1.2",
         "laravel-notification-channels/webpush": "^1.0",
         "laravel/framework": "5.5.*",
         "laravel/socialite": "^3.0",
@@ -18,7 +16,6 @@
         "laravolt/avatar": "^1.8",
         "pragmarx/google2fa": "^1.0",
         "pusher/pusher-php-server": "^3.0",
-        "spatie/laravel-backup": "^5.0",
         "vinkla/hashids": "^3.1"
     },
     "require-dev": {

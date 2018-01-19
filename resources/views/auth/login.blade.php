@@ -14,6 +14,7 @@
     <meta name="description" content="{{ config('app.name') }}" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="{{ mix('static/css/app.css') }}" type="text/css" />
+    <script type="text/javascript" src="{{ mix('static/js/app.js') }}"></script>
 </head>
 <body>
 
@@ -41,8 +42,7 @@
 
                         <label class="custom-control custom-checkbox mb-4">
                             <input type="checkbox" class="custom-control-input" name="remember">
-                            <span class="custom-control-indicator"></span>
-                            <span class="custom-control-description">Manter conectado?</span>
+                            <span class="custom-control-label">Manter conectado?</span>
                         </label>
 
                         <button class="btn btn-info btn-block btn-custom" type="submit"> LOGIN </button>
@@ -51,10 +51,10 @@
                     <div class="divider"><span>OU</span></div>
 
                     <div class="text-center">
-                        <a href="{{ route('auth.provider', 'facebook') }}"><button class="btn btn-icon-icon btn-facebook mb-1 mr-1" aria-label="entrar com facebook"><i class="fa fa-facebook"></i></button></a>
-                        <a href="{{ route('auth.provider', 'github') }}"><button class="btn btn-icon-icon btn-github mb-1 mr-1" aria-label="entrar com github"><i class="fa fa-github"></i></button></a>
-                        <a href="{{ route('auth.provider', 'google') }}"><button class="btn btn-icon-icon btn-googleplus mb-1 mr-1" aria-label="entrar com google"><i class="fa fa-google"></i></button></a>
-                        <a href="{{ route('auth.provider', 'twitter') }}"><button class="btn btn-icon-icon btn-twitter mb-1 mr-1" aria-label="entrar com twitter"><i class="fa fa-twitter"></i></button></a>
+                        @if(config('services.facebook.client_id'))<a href="{{ route('auth.provider', 'facebook') }}"><button class="btn btn-icon-icon btn-facebook mb-1 mr-1" aria-label="entrar com facebook"><i class="fa fa-facebook"></i></button></a>@endif
+                        @if(config('services.github.client_id'))<a href="{{ route('auth.provider', 'github') }}"><button class="btn btn-icon-icon btn-github mb-1 mr-1" aria-label="entrar com github"><i class="fa fa-github"></i></button></a>@endif
+                        @if(config('services.google.client_id'))<a href="{{ route('auth.provider', 'google') }}"><button class="btn btn-icon-icon btn-googleplus mb-1 mr-1" aria-label="entrar com google"><i class="fa fa-google"></i></button></a>@endif
+                        @if(config('services.twitter.client_id'))<a href="{{ route('auth.provider', 'twitter') }}"><button class="btn btn-icon-icon btn-twitter mb-1 mr-1" aria-label="entrar com twitter"><i class="fa fa-twitter"></i></button></a>@endif
                     </div>
                 </div>
             </div>
@@ -64,6 +64,5 @@
         </div>
     </div>
 </div>
-<script src="//cdn.jsdelivr.net/g/jquery@3.2.1(jquery.min.js),tether@1.4.0,bootstrap@4.0.0-alpha.6"></script>
 </body>
 </html>

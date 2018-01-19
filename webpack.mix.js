@@ -14,28 +14,13 @@ const { mix } = require('laravel-mix');
 mix.autoload({})
 
 // Base Directories
-var bower = 'bower_components/';
 var npm   = 'node_modules/';
-
-// Copiando Fontes
-mix.copy('bower_components/font-awesome/fonts', 'public/static/fonts/font-awesome/');
 
 // CSS
 mix.sass('resources/assets/sass/app.scss', 'public/static/css/app.css').version();
 
 // JS
-mix.scripts([
-    bower + 'jquery/dist/jquery.min.js',
-    bower + 'popper.js/dist/umd/popper.js',
-    npm   + 'bootstrap/dist/js/bootstrap.bundle.js',
-    bower + 'jquery-ujs/src/rails.js',
-    bower + 'jquery-mask-plugin/src/jquery.mask.js',
-    bower + 'alertifyjs/src/js/alertify.js',
-    bower + 'flatpickr/dist/flatpickr.min.js',
-    bower + 'flatpickr/dist/l10n/pt.js',
-    'resources/assets/js/snd.js',
-    'resources/assets/js/app.js'
-], 'public/static/js/app.js').version();
+mix.js('resources/assets/js/app.js', 'public/static/js/app.js').version();
 
 // Vue
 mix.js('resources/assets/js/dashboard.js', 'public/static/js').version();

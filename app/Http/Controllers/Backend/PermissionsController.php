@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use Route;
+use App\Http\Controllers\Controller;
 use App\Models\Permission;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
+use Route;
 
 class PermissionsController extends Controller
 {
@@ -40,8 +40,8 @@ class PermissionsController extends Controller
      */
     public function store(Request $request)
     {
-        $Permissao = new Permission;
-        $Permissao->name = $request->input('name');
+        $Permissao        = new Permission;
+        $Permissao->name  = $request->input('name');
         $Permissao->label = $request->input('label');
         $Permissao->save();
 
@@ -119,11 +119,13 @@ class PermissionsController extends Controller
             if (starts_with($Rota->getName(), 'admin')) {
                 $filterRouter = ['admin.empresas*', 'admin.permissio*', 'admin.super*', 'admin.profile*'];
 
-                if (! array_has($filterRouter, $Rota->getName())) {
+                if (!array_has($filterRouter, $Rota->getName())) {
                     Permission::firstorCreate(['name' => $Rota->getName()]);
                 }
             }
         }
+
+        Cache::forget('Permissions');
 
         return redirect()->back()->with('success', 'Lista de permissões gerada com sucesso!');
     }

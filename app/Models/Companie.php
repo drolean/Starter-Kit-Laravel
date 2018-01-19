@@ -80,6 +80,6 @@ class Companie extends Model
             return '/images/'.$value;
         }
 
-        return asset('/logo-color.png');
+        return asset('/logo.png');
     }
 }

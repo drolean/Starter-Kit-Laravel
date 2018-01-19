@@ -73,7 +73,7 @@
                 <div class="header-inner">
                     <div class="d-flex align-content-center flex-nowrap justify-content-end">
                         <div class="mr-auto navbar-item navbar-spacer-right brand hidden-lg-up">
-                            <a href="javascript:;" data-toggle="sidebar" class="toggle-offscreen" aria-label="Abrir menu lateral"> <i class="fa fa-bars" aria-hidden="true"></i> </a>
+                            <a href="javascript:;" data-toggle="sidebar" class="toggle-offscreen text-light" aria-label="Abrir menu lateral"> <i class="fa fa-bars" aria-hidden="true"></i> </a>
                         </div>
                         <p class="navbar-heading"><span> @yield('titulo') </span></p>
                         @if($listaEmpresas->count() >= 2)
@@ -152,7 +152,6 @@
 
     <script type="text/javascript" src="{{ mix('static/js/app.js') }}"></script>
     <script type="text/javascript" src="{{ mix('static/js/dashboard.js') }}"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     @yield('footer.script')
 
     <script>

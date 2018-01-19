@@ -1,4 +1,4 @@
-$version: '0.1.1';
+$version: '0.2.0';
 
 /*! css Dev designed by Leandro Ross V#{$version}. */
 @charset 'UTF-8';
@@ -11,18 +11,15 @@ $body-color:                 rgba(0, 0, 0, 0.7);
 @import "~bootstrap/scss/bootstrap";
 
 // Font Awesome
-$fa-font-path: '/static/fonts/font-awesome' !default;
-@import '../../../bower_components/font-awesome/scss/font-awesome';
+//$fa-font-path: '/static/fonts/font-awesome' !default;
+//@import '../../../bower_components/font-awesome/scss/font-awesome';
 
 // Alertify
-@import '../../../bower_components/alertifyjs/src/sass/alertify';
-.alertify-logs {
-    z-index: 9999;
-}
+//@import '../../../bower_components/alertifyjs/src/sass/alertify';
 
 // FlatPickr
-@import '../../../bower_components/flatpickr/dist/flatpickr.min.css';
-@import '../../../bower_components/flatpickr/dist/themes/material_blue.css';
+//@import '../../../bower_components/flatpickr/dist/flatpickr.min.css';
+//@import '../../../bower_components/flatpickr/dist/themes/material_blue.css';
 
 /*! CSS Internos */
 @import 'helpers/mixins';       // Mixins utilitarios
@@ -42,12 +39,6 @@ $fa-font-path: '/static/fonts/font-awesome' !default;
 @import 'modulos/searchbar';    // Search Bar Top
 @import 'modulos/box';
 @import 'modulos/chat';
-
-/*! Variantes do Bootstrap */
-$brand-primary-lighter: #7ba1f4 !default;
-$brand-primary-laranja: #ffa449 !default;
-@include bg-variant('.bg-primary-lighter', $brand-primary-lighter);
-@include bg-variant('.bg-primary-laranja', $brand-primary-laranja);
 
 .bg-dark-lighter{color:#fff!important;background-color:#697289!important}
 a.bg-dark-lighter:focus,a.bg-dark-lighter:hover{background-color:#535a6c}
